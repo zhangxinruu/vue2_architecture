@@ -1,2 +1,2 @@
-# vue2_source_practice
-Vue2 source code exercises
+# vue-cli-architecture
+Vue-cli-based architecture project
