@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    ul {
+      margin: 10px auto;
+      padding: 0;
+      border: 0;
+    }
+
+    ul li {
+      width: 50px;
+      height: 20px;
+      list-style: none;
+      perspective: 60px;
+      float: left;
+      margin-left: 20px;
+    }
+
+    .box:hover {
+      transform: rotateX(90deg);
+    }
+
+    .box {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: all .6s;
+      transform-style: preserve-3d;
+
+    }
+
+    .front,
+    .bottom {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      font-size: 16px;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .front {
+      background: pink;
+      transform: translateZ(10px);
+      z-index: 1;
+    }
+
+    .bottom {
+      background-color: steelblue;
+      transform: translateY(10px) rotateX(-90deg);
+    }
+
+  </style>
+</head>
+
+<body>
+  <!--1、准备一个大盒子包裹两个小盒子
+        2、两个小盒子重叠在一起
+        3、第二个小盒子水平放置
+        4、外面的大盒子进行旋转
+   -->
+  <ul>
+    <li>
+      <div class="box">
+        <div class="front">3d导航栏练习</div>
+        <div class="bottom">导航栏底部</div>
+      </div>
+    </li>
+    <li>
+      <div class="box">
+        <div class="front">3d导航栏练习</div>
+        <div class="bottom">导航栏底部</div>
+      </div>
+    </li>
+    <li>
+      <div class="box">
+        <div class="front">3d导航栏练习</div>
+        <div class="bottom">导航栏底部</div>
+      </div>
+    </li>
+    <li>
+      <div class="box">
+        <div class="front">3d导航栏练习</div>
+        <div class="bottom">导航栏底部</div>
+      </div>
+    </li>
+    <li>
+      <div class="box">
+        <div class="front">3d导航栏练习</div>
+        <div class="bottom">导航栏底部</div>
+      </div>
+    </li>
+  </ul>
+</body>
+
+</html>

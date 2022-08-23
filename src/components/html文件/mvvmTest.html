@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        // 初始Object.defineProperty
+        const data = {}
+        let name = 'vue'
+        // defineProperty拦截对data对象name属性得访问
+        // 访问data.name得时候就会执行get函数
+        // 监听到属性变化的时候就会执行set函数
+        // data, 'name'等于 data(){
+        // return {name: ""}
+        // }
+        // Object.defineProperty(data, 'name',{
+        //     get: function(){
+        //         console.log("get");
+        //         return name
+        //     },
+        //     set: function(newValue){
+        //         console.log("set");
+        //         name = newValue
+        //     }
+        // })
+        // console.log(data.name);
+        // data.name = '哈默'
+        // console.log(data.name);
+    </script> -->
+
+
+<!-- 对数组，对象进行监听 -->
+    <!-- <script>
+        const data = {
+            name: "周周",
+            age: 22
+        }
+        // 变成响应式数据
+        observer(data);
+
+        function observer(target){
+            if(target !== Object || target === null){
+                return target
+            }
+            for(let key in target){
+                defineReactive(target, key, target[key])
+            }
+        }
+        function defineReactive(target, key, value){
+            Object.defineProperty(target, key, {
+                get(){
+                    return value;
+                },
+                set(newValue){
+                    if(newValue !== value){
+                        value = newValue;
+                        console.log("更新视图");
+                    }
+                }
+            })
+        }
+        data.name = "小霞"
+    </script> --> 
+<!-- 对象内有对象进行深度监听 -->
+    <script>
+        const data = {
+            name: "周周",
+            age: 22,
+            friendShip: {
+                name: "小红",
+                age: 22
+            }
+        }
+
+        // 变成响应式数据 观察
+        observer(data);
+
+        function observer(target){
+            if(typeof target !== 'object' || target == null){
+                return target;
+            }
+            for(let key in target){
+                defineReactive(target, key, target[key]);
+            }
+        }
+
+        // 收集依赖
+        function defineReactive(target, key, value){
+            // 深度观察
+            observer(value);
+
+            Object.defineProperty(target, key, {
+                get(){
+                    console.log("get");
+                    return value;
+                },
+                set(newValue){
+                    // 深度观察
+                    observer(newValue);
+                    if(newValue !== value){
+                        value = newValue;
+                        console.log("更新视图");
+                    }
+                }
+            })
+        }
+        data.name = {name: "张三"}
+        data.friendShip.name = "小红"
+    </script>
+    
+</body>
+</html>

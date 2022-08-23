@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #canvas{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="600"></canvas>
+    <script>
+        var canvas = document.querySelector('#canvas')
+        var ctx = canvas.getContext('2d')
+        // ctx.fillRect(50,50,100,50)
+        // ctx.strokeRect(160,50,100,50)
+        // ctx.clearRect(60,60,50,50)
+        // 绘制圆
+        // ctx.arc(圆心x，圆心y，半径，起始弧度，结束弧度，旋转方向)
+        ctx.beginPath();
+            ctx.arc(100,100,50,0,Math.PI*2,true)
+            ctx.fill()
+            // ctx.stroke()
+        ctx.closePath();
+    </script>
+</body>
+</html>

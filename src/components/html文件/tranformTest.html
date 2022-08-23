@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .father{
+        width: 200px;
+        height: 200px;
+        border: 1px rgb(145, 66, 79) solid;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .father::after{
+        content: "欣茹";
+        width: 200px;
+        height: 200px;
+        display: block;
+        background-color: pink;
+        transform: rotate(180deg);
+        transform-origin: left bottom;
+        transition: all 0.1s;
+    }
+    .father:hover::after{
+        transform: rotate(0deg);
+    }
+</style>
+<body>
+    <div class="father"></div>
+</body>
+</html>

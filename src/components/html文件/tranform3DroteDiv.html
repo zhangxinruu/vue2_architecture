@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS33D盒子旋转案例</title>
+</head>
+<style>
+    body{
+        perspective: 350px;
+    }
+    .father{
+        width: 300px;
+        height: 300px;
+        position: relative;
+        margin: 0 auto;
+        transition: all 0.6s;
+        transform-style: preserve-3d;
+    }
+    .father:hover{
+        transform: rotateY(180deg);
+    }
+    .front,.back{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0%;
+        font-size: 26px;
+        color: #fff;
+        text-align: center;
+        line-height: 300px;
+        border-radius: 50%;
+    }
+    .front{
+        background-color: rgb(221, 160, 201);
+        z-index: 1;
+        backface-visibility: hidden;
+    }
+    .back{
+        background-color: powderblue;
+        transform: rotateY(180deg);
+    }
+</style>
+<body>
+    <div class="father">
+        <div class="front">正面</div>
+        <div class="back">反面</div>
+    </div> 
+</body>
+</html>
