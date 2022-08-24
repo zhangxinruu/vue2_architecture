@@ -14,10 +14,10 @@ const router = new Router({
   routes: [
     ...routerList,
   // 通过路由重定向，让用户在访问路径“/”，自动重定向到“/login”
-  //    {
-  //   path: "/",
-  //   redirect: "/login"
-  // }
+     {
+    path: "/",
+    redirect: "/login"
+  }
   ]
 })
 export default router

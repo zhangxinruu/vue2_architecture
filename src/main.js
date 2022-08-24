@@ -11,7 +11,7 @@ import './request/service.js'
 Vue.prototype.$echarts = echarts
 import TreeTable from 'vue-table-with-tree-grid'
 Vue.component('tree-table', TreeTable)
-
+import store from './store/index.js'
 // 导入全局样式表
 import "@/assets/css/global.css"
 Vue.config.productionTip = false
@@ -21,10 +21,10 @@ Vue.use(echarts)
 const vue = new Vue({
   el: '#app',
   router,
-
+  store,
   components: {
     App
   },
   template: '<App/>'
 })
-console.log("fddsfds",vue);
+console.log("vue实例",vue);
