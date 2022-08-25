@@ -6,6 +6,7 @@ import Roles from '@/components/power/roles.vue'
 import Cate from '@/components/goods/cate.vue'
 import Goods from '@/components/goods/goods.vue'
 import bigscreen from '@/components/bigScreen/bigScreen.vue'
+import params from '@/components/params/params.vue'
 export default{
 
       path: '/home',
@@ -42,6 +43,10 @@ export default{
         {
           path: '/bigscreen',
           component: bigscreen
+        },
+        {
+          path: '/params',
+          component: params
         }
     ]
 }
