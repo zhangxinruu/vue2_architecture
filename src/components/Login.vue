@@ -29,7 +29,7 @@
         </el-form-item>
         <!--  -->
         <el-form-item class="btns">
-          <el-button type="primary" @click="login">登录</el-button>
+          <el-button class="login-btn" type="primary" @click="login">登录</el-button>
           <el-button type="info" @click="resetLoginForm">重置</el-button>
         </el-form-item>
       </el-form>
@@ -96,7 +96,7 @@ export default {
 
 <style lang="less" scoped>
 .login_container {
-  background-color: #2b4b6b;
+  background-color: #085e9b;
   height: 100%;
 }
 .login_box {
@@ -145,6 +145,23 @@ export default {
   }
   el-input__inner {
     width: 300px;
+  }
+  .login-btn{
+    background: linear-gradient(90deg, #009FF9, #41B883, #FEE330, #009DF9);
+    background-size: 300%;
+    position: relative;
+  }
+
+  .login-btn:hover{
+    animation: sun 9s infinite;
+    
+  }
+  @keyframes sun {
+    100%{
+      background-position: -300% 0;
+      box-shadow:  0 0 9px 1px #65b2ff;
+    }
+
   }
 }
 </style>
